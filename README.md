@@ -19,4 +19,4 @@ decisions.
 
 Diagram:
 
-![alt text](http://url/to/img.png)
+![alt text](diagram.png)
