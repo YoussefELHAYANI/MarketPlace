@@ -1,4 +1,4 @@
-Supermarket Pricing
+# Supermarket Pricing
  
 The problem domain is something seemingly simple: pricing goods at
 supermarkets.
@@ -17,6 +17,16 @@ to deal with these (and other) pricing schemes, and at the same time
 are generally usable how do you keep an audit trail of pricing
 decisions.
 
-Diagram:
+# Diagram:
 
-![alt text](diagram.png)
+
+![alt text](https://github.com/YoussefELHAYANI/MarketPlace/blob/master/diagram.jpg?raw=true)
+
+
+#  The elements evaluated (mainly, but not only) will be:
+
+1- The structuring and modeling of the project
+
+2- TDD
+
+3- The relevance of the Java 8 techniques used
