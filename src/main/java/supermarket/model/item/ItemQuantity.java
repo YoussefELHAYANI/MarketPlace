@@ -16,7 +16,7 @@ public class ItemQuantity implements Item {
 		return product.pricePerUnit();
 	}
 
-	public String getProductName() {
-		return product.getName();
+	public String getProductId() {
+		return product.getId();
 	}
 }

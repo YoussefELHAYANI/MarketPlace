@@ -6,11 +6,11 @@ import supermarket.model.item.Item;
 import supermarket.model.item.ItemMass;
 
 public class WeighedProduct {
-	private final String name;
+	private final String id;
 	private final BigDecimal pricePerKilo;
 
 	public WeighedProduct(final BigDecimal pricePerKilo,final String name) {
-		this.name = name;
+		this.id = name;
 		this.pricePerKilo = pricePerKilo;
 	}
 
@@ -22,7 +22,7 @@ public class WeighedProduct {
 		return new ItemMass(this, kilos);
 	}
 
-	public String getName() {
-		return name;
+	public String getId() {
+		return id;
 	}
 }

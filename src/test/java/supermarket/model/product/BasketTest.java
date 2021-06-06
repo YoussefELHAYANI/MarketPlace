@@ -2,10 +2,7 @@ package supermarket.model.product;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.List;
 
-import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,13 +21,17 @@ public class BasketTest extends TestCase {
 	public void init() {
 		WeighedProduct banane = new WeighedProduct(new BigDecimal(10), "Banane");
 		Product mouchoire = new Product(new BigDecimal(5), "mouchoire");
+		Product pizza = new Product(new BigDecimal(10), "pizza");
 		ItemQuantity itemMouchoire = new ItemQuantity(mouchoire);
+		ItemQuantity itemPizza = new ItemQuantity(pizza);
 		ItemMass itemBanane = new ItemMass(banane, new BigDecimal(3));
 		basket = new Basket();
 		basket.add(itemMouchoire);
 		basket.add(itemMouchoire);
 		basket.add(itemMouchoire);
 		basket.add(itemBanane);
+		basket.add(itemPizza);
+		basket.add(itemPizza);
 	}
 	
 	@Test
@@ -38,21 +39,21 @@ public class BasketTest extends TestCase {
 
 		basket.total(DiscountType.valueOf("REGULAR"));
 		Assertions.assertEquals(basket.total(DiscountType.valueOf("REGULAR")),
-				new BigDecimal(45).setScale(2, RoundingMode.HALF_UP));
+				new BigDecimal(65).setScale(2, RoundingMode.HALF_UP));
 	}
 
 	@Test
 	public void twoForOnePriceTest() {
 		basket.total(DiscountType.valueOf("DISCOUNT_2FOR_ONE"));
-		Assertions.assertEquals(basket.total(DiscountType.valueOf("REGULAR")),
-				new BigDecimal(35).setScale(2, RoundingMode.HALF_UP));
+		Assertions.assertEquals(basket.total(DiscountType.valueOf("DISCOUNT_2FOR_ONE")),
+				new BigDecimal(50).setScale(2, RoundingMode.HALF_UP));
 	}
 
 	@Test
 	public void treeOneFreePriceTest() {
 		basket.total(DiscountType.valueOf("DISCOUNT_3ONE_EURO"));
-		Assertions.assertEquals(basket.total(DiscountType.valueOf("REGULAR")),
-				new BigDecimal(31).setScale(2, RoundingMode.HALF_UP));
+		Assertions.assertEquals(basket.total(DiscountType.valueOf("DISCOUNT_3ONE_EURO")),
+				new BigDecimal(51).setScale(2, RoundingMode.HALF_UP));
 	}
 
 	

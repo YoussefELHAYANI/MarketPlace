@@ -14,7 +14,7 @@ public class Basket {
     private final Pricing pricing;
 
     public Basket() {
-        this.items = new ArrayList<Item>();
+        this.items = new ArrayList<>();
         pricing = new Pricing();
     }
 

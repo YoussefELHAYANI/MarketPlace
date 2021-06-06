@@ -6,11 +6,11 @@ import supermarket.model.item.Item;
 import supermarket.model.item.ItemQuantity;
 
 public class Product {
-	private final String name;
+	private final String id;
 	private final BigDecimal pricePerUnit;
 
     public Product(final BigDecimal pricePerUnit, final String name) {
-        this.name = name;
+        this.id = name;
 		this.pricePerUnit = pricePerUnit;
     }
 
@@ -21,7 +21,7 @@ public class Product {
         return new ItemQuantity(this);
     }
 
-	public String getName() {
-		return name;
+	public String getId() {
+		return id;
 	}
 }

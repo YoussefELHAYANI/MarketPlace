@@ -5,5 +5,5 @@ import java.math.BigDecimal;
 
 public interface Item {
 	 BigDecimal price();
-	 String getProductName();
+	 String getProductId();
 }
